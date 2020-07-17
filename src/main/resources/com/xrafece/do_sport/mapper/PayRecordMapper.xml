@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xrafece.do_sport.mapper.PayRecordMapper">
+
+	<insert id="addPayRecord" parameterType="ExpensesRecord">
+        insert into do_sport.expenses_record (wx_id, pay_time, pay_money)
+        values (#{wx_id}, #{pay_time}, #{pay_money})
+    </insert>
+
+	<delete id="deletePayRecord" parameterType="ExpensesRecord">
+        delete from do_sport.expenses_record where wx_id = #{wx_id}
+    </delete>
+
+	<update id="updatePayRecord" parameterType="ExpensesRecord">
+        update do_sport.expenses_record
+        set pay_money = #{pay_money}, pay_time = #{pay_time}
+        where wx_id = #{wx_id}
+    </update>
+
+	<select id="allPayRecordList" resultType="ExpensesRecord">
+        select * from do_sport.expenses_record
+    </select>
+	<select id="monthPayMoney" resultType="int">
+        select count(*) from do_sport.expenses_record where date_format(pay_time, '%Y%m') = date_format(curdate(), '%Y%m')
+    </select>
+
+</mapper>

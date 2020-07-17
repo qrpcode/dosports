@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--jquery-->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+
+    <!--提示插件-->
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster-sideTip-borderless.min.css" />
+    <script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
+
+    <!--组件拖动插件-->
+    <script type="text/javascript" src="js/ddsort.js"></script>
+
+    <link href="css/admin.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<div class="ie-box" style="display: none;">
+    <a href="https://www.google.cn/chrome/"><div class="ie-button">下载Chrome</div></a>
+</div>
+
+<div class="title">
+    <div class="title-text">程序员健身系统后台</div>
+</div>
+<div class="numShow">
+    <div class="numShow-logShow">
+        <div class="numShow-logShowMain">
+            <div class="numShow-logLogo"><image src="images/admin.png" width="80px" height="80px"></div>
+            <div class="numShow-logRight">
+                <div class="numShow-name" id="userName"></div>
+                <div class="numShow-lever">
+                    <image src="images/vip.png" width="80px" height="80px" class="numShow-leverImg"></image>
+                    <div class="numShow-leverText" id="level"></div>
+                </div>
+            </div>
+        </div>
+        <div class="numShow-do">
+            <div class="numShow-menu1" id="chooseMyPass">修改密码</div>
+            <div class="numShow-menu2" onclick="logout();">退出登录</div>
+        </div>
+    </div>
+    <div class="numShow-allUser">
+        <div class="numShow-numTitle">总用户数量(人)</div>
+        <div class="numShow-num" id="allUser"></div>
+    </div>
+    <div class="numShow-dayCome">
+        <div class="numShow-numTitle">今日进店人数(人)</div>
+        <div class="numShow-num" id="dayCome"></div>
+    </div>
+    <div class="numShow-monthPrice">
+        <div class="numShow-numTitle">本月收账(元)</div>
+        <div class="numShow-num" id="monthPrice"></div>
+    </div>
+    <div class="numShow-monthUser">
+        <div class="numShow-numTitle">本月到店人数(人)</div>
+        <div class="numShow-num" id="monthUser"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="left-sex">
+            <div class="left-sexTitle">会员男女比例</div>
+            <div class="left-sexShow" id="sexContainer"></div>
+        </div>
+
+        <div class="left-user">
+            <div class="left-userTitle">会员列表</div>
+            <p style="display: none" id="user-lastUser">-1</p>
+            <p style="display: none" id="user-allNum">0</p>
+            <div class="left-userList" id="user"></div>
+        </div>
+
+    </div>
+    <div class="middle">
+
+        <div class="middle-seachList" id="middle-seachList">
+            <div class="middle-title">查询列表</div>
+            <div class="seachList" id="seachList"></div>
+        </div>
+
+        <div class="middle-cardSet"  id="middle-cardSet">
+            <div class="middle-title">设置卡选项</div>
+            <div class="cardSet">
+                <div class="card-listTitle">
+                    <div class="card-titleTips">卡名称</div>
+                    <div class="card-dayTips">时长(天)</div>
+                    <div class="card-priceTips">价格(元)</div>
+                    <div class="card-seeTips" title="不推荐的产品会在前台以折叠形式展示  用户查看更多后依旧可以正常购买~">是否推荐</div>
+                    <div class="card-delTips">删除</div>
+                    <input class="card-allNum" value="5" style="display:none">
+                </div>
+                <div class="card-scroll">
+                    <ul id="card-ListBox">
+                        <li class="card-list" title="单击文字即可修改，按住拖动排序~" id="card-list1">
+                            <input class="card-title" value="月卡1" id = "card-title1">
+                            <input class="card-day" value="366" id = "card-day1">
+                            <input class="card-price" value="58.9" id = "card-price1">
+                            <div class="card-see" id="card-see1" onclick="cardSee(1)" style="background-image:url(images/see2.png)"></div>
+                            <div class="card-del" onclick="cardDel(1)">×</div>
+                        </li>
+
+                        <li class="card-list" title="单击文字即可修改，按住拖动排序~" id="card-list2">
+                            <input class="card-title" value="月卡2" id = "card-title2">
+                            <input class="card-day" value="366" id = "card-day2">
+                            <input class="card-price" value="58.9" id = "card-price2">
+                            <div class="card-see" id="card-see2" onclick="cardSee(2)" style="background-image:url(images/see2.png)"></div>
+                            <div class="card-del" onclick="cardDel(2)">×</div>
+                        </li>
+
+                        <li class="card-list" title="单击文字即可修改，按住拖动排序~" id="card-list3">
+                            <input class="card-title" value="月" id = "card-title3">
+                            <input class="card-day" value="366" id = "card-day3">
+                            <input class="card-price" value="58.9" id = "card-price3">
+                            <div class="card-see" id="card-see3" onclick="cardSee(3)" style="background-image:url(images/see2.png)"></div>
+                            <div class="card-del" onclick="cardDel(3)">×</div>
+                        </li>
+
+                        <li class="card-list" title="单击文字即可修改，按住拖动排序~" id="card-list4">
+                            <input class="card-title" value="月52卡" id = "card-title4">
+                            <input class="card-day" value="366" id = "card-day4">
+                            <input class="card-price" value="58.9" id = "card-price4">
+                            <div class="card-see" id="card-see4" onclick="cardSee(4)" style="background-image:url(images/see2.png)"></div>
+                            <div class="card-del" onclick="cardDel(4)">×</div>
+                        </li>
+
+                        <li class="card-list" title="单击文字即可修改，按住拖动排序~" id="card-list5">
+                            <input class="card-title" value="月卡53" id = "card-title5">
+                            <input class="card-day" value="366" id = "card-day5">
+                            <input class="card-price" value="58.9" id = "card-price5">
+                            <div class="card-see" id="card-see5" onclick="cardSee(5)" style="background-image:url(images/see2.png)"></div>
+                            <div class="card-del" onclick="cardDel(5)">×</div>
+                        </li>
+
+                    </ul>
+                    <div class="card-add" id="cardAdd" onclick="addCardList();">添加更多种类</div>
+                </div>
+                <div class="card-button" id="card-button" onclick="cardSure();">保存修改</div>
+            </div>
+        </div>
+
+        <div class="middle-userShow"  id="middle-userShow">
+            <div class="middle-title">用户详情</div>
+            <div class="middle-wxList">
+                <div class="wx-head">
+                    <div class="wx-img">
+                        <image src="" class="wx-imgShow" id="wx-imgShow"></image>
+                    </div>
+                    <div class="wx-right">
+                        <div class="wx-nickName">
+                            <div class="wx-name" id="wx-name"></div>
+                            <div class="wx-man" id="wx-man" style="display: none;"></div>
+                            <div class="wx-woman" id="wx-woman" style="display: none;"></div>
+                        </div>
+                        <div class="wx-wxTime" id="wx-wxTime">到期时间：</div>
+                    </div>
+                </div>
+                <div class="wx-main">
+                    <div class="middle-title">用户办卡记录</div>
+                    <div class="wx-Showlist" id="wx-paylist"></div>
+                </div>
+                <div class="wx-main">
+                    <div class="middle-title">用户健身记录</div>
+                    <div class="wx-Showlist" id="wx-keeplist"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-chooseAdmin" id="middle-chooseAdmin">
+            <div class="middle-title" id="chooseAdminTitle">管理员信息修改</div>
+
+            <div class="cadmin-name" id="cadmin-name"></div>
+            <input value="1" id="cadmin-id" style="display: none;">
+
+            <div class="cadmin-list" id="cadmin-addname">
+                <div class="cadmin-tips">管理员账号</div>
+                <input class="cadmin-input" id="cadmin-nickName">
+            </div>
+
+            <div class="cadmin-list">
+                <div class="cadmin-tips">修改密码</div>
+                <input class="cadmin-input" placeholder=""  id="cadmin-password">
+            </div>
+
+            <div class="cadmin-list" id="cadmin-level">
+                <div class="cadmin-tips">超级管理</div>
+                <div class="cadmin-type" onclick="cadminTypeChoose();" id="cadmin-typeImg"></div>
+                <input value="1" id="cadmin-type" style="display: none;">
+            </div>
+
+            <div class="cadmin-button" id="cadmin-button" onclick="adminSure();">确定添加</div>
+        </div>
+
+    </div>
+    <div class="right">
+
+        <div class="right-seach">
+            <input id="userSeach" placeholder="用户昵称模糊搜索" id="seach-word">
+            <div class="right-seachButton" onclick="seach();"></div>
+        </div>
+
+
+        <div class="right-pay">
+            <div class="right-payTitle">付款记录</div>
+            <div class="right-goCardSet" id="goCardSet" onclick="goCardSet()" title="添加或设置充值卡类型"></div>
+            <p style="display: none" id="pay-lastUser">-1</p>
+            <p style="display: none" id="pay-allNum">0</p>
+            <div class="pay" id="pay"></div>
+        </div>
+
+        <div class="right-admin">
+            <div class="right-adminTitle">
+                管理员列表
+                <div class="right-adminAdd" onclick="goAddAdmin();" id="right-adminAdd" title="添加管理员"></div>
+            </div>
+            <div class="right-adminList" id="admin"></div>
+        </div>
+    </div>
+</div>
+
+<!--echatsjs-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+<script src="js/get.js" type="text/javascript"></script>
+<script>getLoginHome();IEShow();</script>
+</body>
+</html>

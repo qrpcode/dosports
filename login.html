@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>后台登录</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- //for-mobile-apps -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/get.js" type="text/javascript"></script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <!-- main -->
+    <div class="main">
+        <h1>
+            后台登录系统
+        </h1>
+            <div class="wrongShow">抱歉您的账号密码不匹配</div>
+            <input type="text" value="用户名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '用户名';}"
+                   required="" id="name">
+            <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"
+                   required="" id="password">
+            <input type="submit" value="登录" onclick="login()">
+    </div>
+    <div class="footer">
+        <p>程序员健身管理系统</p>
+    </div>
+    <!-- //main -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xrafece.do_sport.mapper.RechargeCardMapper">
+
+	<insert id="addRechargeCard" parameterType="RechargeCard">
+        insert into do_sport.recharge_card (card_name, card_price, card_expireDay,card_see, card_rank)
+        values (#{card_name}, #{card_price}, #{card_expireDay}, #{card_see}, #{card_rank})
+    </insert>
+
+	<delete id="deleteRechargeCard" parameterType="RechargeCard">
+        delete from do_sport.recharge_card where card_name = #{card_name}
+    </delete>
+
+	<update id="updateRechargeCard" parameterType="RechargeCard">
+        update do_sport.recharge_card
+        set card_price = #{card_price}, card_expireDay = #{card_expireDay}
+        where card_name = #{card_name}
+    </update>
+
+	<select id="allRechargeCardList" resultType="RechargeCard">
+        select card_name, card_price, card_expireDay, card_see from do_sport.recharge_card order by card_rank desc
+    </select>
+
+	<delete id="deleteAll" >
+        delete from do_sport.recharge_card;
+    </delete>
+
+</mapper>

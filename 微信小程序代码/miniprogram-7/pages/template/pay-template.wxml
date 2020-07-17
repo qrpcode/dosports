@@ -1,0 +1,9 @@
+<template name="payTemplate">
+  <view class="list-box">
+    <view class="list-left">
+      <view class="list-title">{{payCard}}</view>
+      <view class="list-text">{{payTime}}</view>
+    </view>
+    <view class="list-right">￥{{payPrice}}</view>
+  </view>
+</template>

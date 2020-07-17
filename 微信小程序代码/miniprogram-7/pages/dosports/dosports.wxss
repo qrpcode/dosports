@@ -1,0 +1,165 @@
+/* pages/dosports/dosports.wxss */
+.card{
+  width:650rpx;
+  height:150rpx;
+  background: linear-gradient(to right, #FBECCF, #DBBD87);
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 20rpx;
+  overflow:hidden;
+}
+@keyframes cardShow{
+		from{height:150rpx;}
+		to{height:800rpx;}
+}
+@keyframes cardHide{ 
+		from{height:800rpx;}
+		to{height:150rpx;}
+}
+.card-head{
+  height:150rpx;
+}
+.card-head button{
+  background: linear-gradient(to right, #FBECCF, #DBBD87);
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20rpx;
+  color:#FFF;
+}
+.card-img{
+  width:90rpx;
+  height:90rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-left: 25rpx;
+  float:left;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card-name{
+  width:400rpx;
+  height:100rpx;
+  margin-top: 35rpx;
+  margin-bottom: 25rpx;
+  margin-left: 25rpx;
+  float: left;
+  color: #9F7945;
+}
+.card-nickName{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.card-time{
+  margin-top: 5rpx;
+  font-size: 28rpx;
+}
+.card-vipCodeBox{
+  width:646rpx;
+  margin-left: 2rpx;
+  height:650rpx;
+  background-color: #FFF;
+}
+.card-qrcode{
+  background-image: url(http://www.miankou.cn/do_sport/wx/qrcode.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width:70rpx;
+  height:70rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  float:left;
+}
+.card-vipCode{
+  height:450rpx;
+  width:450rpx;
+  margin-left: 99rpx;
+  margin-top: 40rpx;
+}
+.card-cipTips{
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  color: #9F7945;
+}
+
+
+.history{
+  width:750rpx;
+  box-shadow:0px -10px 10px -10px #A8A8A8;
+}
+.history-title{
+  height:100rpx;
+  width:700rpx;
+  margin-left: 25rpx;
+  position:relative;
+}
+.history-bubble{
+  width:250rpx;
+  height: 65rpx;
+  background-color: #FEFAF1;
+  border-radius: 40rpx;
+  position:absolute;
+  z-index: -1;
+  top:20rpx;
+}
+@keyframes bubbleToKeep{
+		from{left:400rpx;}
+		to{left:50rpx;}
+}
+@keyframes bubbleToPay{ 
+		from{left:50rpx;}
+		to{left:400rpx;}
+}
+.history-titleText{
+  width:350rpx;
+  font-size: 32rpx;
+  color:#9F7945;
+  float: left;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.history-list{
+  width:750rpx;
+}
+.list-box{
+  height:100rpx;
+  width: 600rpx;
+  margin-left: 75rpx;
+  border-bottom: 1px solid #eee; 
+  margin-top: 30rpx;
+}
+.list-title{
+  font-size: 34rpx;
+  color:#666;
+}
+.list-text{
+  font-size: 26rpx;
+  color:#888;
+}
+.list-left{
+  width:400rpx;
+  float:left;
+}
+.list-right{
+  width:200rpx;
+  float:left;
+  color:#F2C663;
+  line-height: 130rpx;
+  margin-top: -30rpx;
+  text-align: center
+}
+.list-getMore{
+  color:#F2C663;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+  height:100rpx;
+  overflow: hidden
+}
+.list-getMore image{
+  height:30rpx;
+  width:30rpx;
+  margin-right: 10rpx;
+}

@@ -1,0 +1,934 @@
+li{
+    list-style-type:none;
+}
+body{
+    width:1250px;
+    margin: 0 auto;
+    background-color: rgb(26, 31, 53);
+}
+/*IE不兼容提示*/
+.ie-box{
+    height:101px;
+    width:900px;
+    margin:0 auto;
+    background-image: url(../images/ie.png);
+    background-size: contain;
+    padding-top: 420px;
+}
+.ie-button{
+    width:148px;
+    height:46px;
+    background-color: #1a73e8;
+    color:#FFF;
+    padding: 0 24px;
+    font-size: 15px;
+    line-height:46px;
+    margin-left: 600px;
+    text-decoration:none;
+    text-align: center;
+}
+.title{
+    height:90px;
+    line-height: 70px;
+    width:100%;
+}
+.title-text{
+    height:90px;
+    line-height: 70px;
+    width:600px;
+    margin-left: 325px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color:#FFF;
+    float: left;
+}
+.title-about{
+    width:30px;
+    height:30px;
+    border-radius:15px;
+    float: right;
+    color: #FFF;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 25px;
+    animation: aboutChange 5s infinite;
+    cursor: pointer;
+}
+
+.numShow{
+    width:100%;
+    height:110px;
+}
+.numShow-logShow{
+    width:100%;
+    height:110px;
+}
+.numShow-logShow{
+    width:298px;
+    height:110px;
+    float: left;
+    border-radius: 10px;
+}
+.numShow-logShowMain{
+    width:298px;
+    height:110px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #074FF2 , #407AFC);
+    box-shadow: 0px 0px 6px #407AFC;
+    float: left;
+}
+.numShow-do{
+    height:40px;
+    width:298px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    margin-top:100px;
+    display: none;
+}
+.numShow-menu1,.numShow-menu2{
+    width:133px;
+    height:30px;
+    float: left;
+    text-align: center;
+    color: #407AFC;
+    cursor:pointer;
+    line-height: 30px;
+    font-size: 14px;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position:15px 7.5px;
+    margin-left: 15px;
+}
+.numShow-menu1{
+    background-image: url(../images/choosekey.png);
+    border-right: 1px solid #DDD;;
+}
+.numShow-menu2{
+    background-image: url(../images/logout.png);
+}
+.numShow-logShow:hover{
+    box-shadow: 0px 0px 20px #407AFC;
+    margin-top: -30px;
+    animation: logShow 0.2s;
+}
+@keyframes logShow{
+    from{margin-top: 0px;}
+    to{margin-top: -30px;}
+}
+.numShow-logShow:hover .numShow-do{
+    display: block;
+}
+.numShow-logLogo{
+    height:97px;
+    width:110px;
+    margin-left: 10px;
+    margin-top: 13px;
+    float: left;
+}
+.numShow-logRight{
+    float: left;
+    height:97px;
+    margin-top: 13px;
+}
+.numShow-name{
+    color: #FFF;
+    font-size: 26px;
+}
+.numShow-lever{
+    height:30px;
+    width: 127px;
+    background: linear-gradient(to right, #CC6600, #663300);
+    border-radius: 15px;
+    line-height:30px;
+    color:#FFF;
+    margin-top: 15px;
+}
+.numShow-leverImg{
+    height:30px;
+    width:30px;
+    float: left;
+    margin-left: 8px;
+}
+.numShow-leverText{
+    height:30px;
+    width:70px;
+    font-size: 15px;
+    float: left;
+}
+.numShow-allUser{
+    width:223px;
+    height:110px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #019EB8 , #15DCFC);
+    box-shadow: 0px 0px 6px #15DCFC;
+    float: left;
+}
+.numShow-allUser:hover{
+    box-shadow: 0px 0px 20px #15DCFC;
+    margin-top: -5px;
+}
+.numShow-dayCome{
+    width:223px;
+    height:110px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #F3026A , #FE519B);
+    box-shadow: 0px 0px 6px #FE519B;
+    float: left;
+}
+.numShow-dayCome:hover{
+    box-shadow: 0px 0px 20px #FE519B;
+    margin-top: -5px;
+}
+.numShow-monthPrice{
+    width:223px;
+    height:110px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #E9220D , #F77062);
+    box-shadow: 0px 0px 6px #F77062;
+    float: left;
+}
+.numShow-monthPrice:hover{
+    box-shadow: 0px 0px 20px #F77062;
+    margin-top: -5px;
+}
+.numShow-monthUser{
+    width:223px;
+    height:110px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #1374A6 , #417BFC);
+    box-shadow: 0px 0px 6px #417BFC;
+    float: left;
+}
+.numShow-monthUser:hover{
+    box-shadow: 0px 0px 20px #417BFC;
+    margin-top: -5px;
+}
+.numShow-numTitle{
+    height:30px;
+    line-height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    color: #FFF;
+    font-size: 19px;
+}
+.numShow-num{
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: bold;
+}
+.main{
+    width:100%;
+    height:500px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.left{
+    width:350px;
+    height:100%;
+    float: left;
+}
+.middle{
+    width:550px;
+    height:100%;
+    float: left;
+}
+.right{
+    width:350px;
+    height:100%;
+    float: left;
+}
+.left-sex{
+    width:350px;
+    height:200px;
+    background-color: #283052;
+}
+.left-sexTitle,.left-userTitle,.right-adminTitle,.right-payTitle,.middle-title{
+    background-color: #303A62;
+    width:100%;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    font-size:16px;
+    text-align: center;
+}
+.right-goCardSet{
+    width:20px;
+    height:20px;
+    left:320px;
+    top:5px;
+    background-size: contain;
+    background-image: url(../images/card.png);
+    position: absolute;
+}
+.right-goCardSet:hover{
+    background-image: url(../images/cardhot.png);
+}
+.left-sex:hover,.left-user:hover{
+    box-shadow: 0px 0px 20px #303A62;
+    margin-top: -5px;
+}
+.left-sexShow{
+    height:220px;
+    margin-top: -50px;
+    width:350px;
+}
+.left-user{
+    width:350px;
+    height:280px;
+    margin-top: 20px;
+    background-color: #283052;
+}
+.left-userList{
+    height:250px;
+    width:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.left-userList::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.left-userList::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.left-user:hover{
+    box-shadow: 0px 0px 20px #303A62;
+    margin-top: 15px;
+}
+.left-userShow{
+    height:70px;
+    margin-top: 8px;
+    width: 100%;
+}
+.user-img{
+    width:56px;
+    height:56px;
+    margin-top: 12px;
+    margin-left: 12px;
+    float: left;
+}
+.user-imgShow{
+    width:56px;
+    height:56px;
+    border-radius: 50%;
+}
+.user-main{
+    width:180px;
+    margin-left: 10px;
+    height:70px;
+    float: left;
+}
+.user-nickName{
+    width:100%;
+    height:30px;
+    margin-top: 10px;
+    color: #FFF;
+    font-size: 17px;
+    line-height: 30px;
+}
+.user-date{
+    height:20px;
+    color: #999;
+    font-size: 15px;
+    line-height:20px;
+}
+.user-del{
+    float: left;
+    height:20px;
+    width:20px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-image: url(../images/del.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.user-see{
+    float: left;
+    height:14px;
+    width:20px;
+    margin-top: 28px;
+    background-image: url(../images/see.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.user-see:hover{
+    background-image: url(../images/seehot.png);
+}
+.user-del:hover{
+    background-image: url(../images/delhot.png);
+}
+.right-admin{
+    width:350px;
+    height:200px;
+    background-color: #283052;
+    margin-bottom: 20px;
+    position: relative;
+}
+.right-adminAdd{
+    width:20px;
+    height:20px;
+    left:320px;
+    top:5px;
+    background-size: contain;
+    background-image: url(../images/add.png);
+    position: absolute;
+}
+.right-adminAdd:hover{
+    background-image: url(../images/addhot.png);
+}
+.right-admin:hover{
+    margin-top: -5px;
+    box-shadow: 0px 0px 20px #303A62;
+}
+.right-adminList{
+    height:170px;
+    width:350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.right-adminList::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.right-adminList::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.admin{
+    width:auto;
+    height:30px;
+    background-color: #0950F2;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left:10px;
+    display:inline-block;
+}
+
+.admin-name{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    height:30px;
+    line-height: 30px;
+    color:#FFF;
+    margin-left: 10px;
+    text-align: center;
+}
+.admin-choose,.admin-delect{
+    width:16px;
+    height:16px;
+    float: left;
+    margin-top:7px;
+    background-size: 16px 16px;
+    background-position: 0 0;
+}
+.admin-choose{
+    background-image: url(../images/choose.png);
+}
+.admin-delect{
+    margin-left: 20px;
+    background-image: url(../images/del.png);
+    margin-right: 20px;
+}
+.admin-choose:hover{
+    background-image: url(../images/choosehot.png);
+}
+.admin-delect:hover{
+    background-image: url(../images/delhot.png);
+}
+.right-seach{
+    width:350px;
+    height:40px;
+    margin-bottom: 20px;
+    background-color: #283052;
+}
+.right-seach input{
+    border: none;
+    outline: none;
+    width: 290px;
+    height:38px;
+    color:#FFF;
+    background-color: #283052;
+    line-height: 38px;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+.right-seachButton{
+    float: left;
+    width:30px;
+    height:30px;
+    margin-top: 5px;
+    background-image: url(../images/seach.png);
+    background-size: contain;
+    cursor: pointer;
+}
+
+.right-pay{
+    height:220px;
+    width:350px;
+    background-color: #283052;
+    margin-bottom: 20px;
+    position: relative;
+}
+.right-pay:hover{
+    box-shadow: 0px 0px 20px #303A62;
+    margin-top: -5px;
+}
+.pay{
+    overflow-x: hidden;
+    overflow-y: auto;
+    width:350px;
+    height:190px;
+}
+.pay-data{
+    height:30px;
+    width:350px;
+}
+.pay::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.pay::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.pay-img{
+    height:20px;
+    width:20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 4px;
+    float: left;
+    border-radius: 50%;
+    background-size: contain;
+}
+.pay-nickname,.pay-nickname,.pay-card,.pay-day,.pay-price{
+    font-size: 14px;
+    line-height: 30px;
+    height:30px;
+    float: left;
+    color: #15DCFC;
+    text-align: center;
+}
+.pay-nickname,.pay-nickname,.pay-card,.pay-price{
+    width:64px;
+}
+.pay-day{
+    width:128px;
+}
+.middle-seachList,.middle-userShow,.middle-chooseUser,.middle-chooseAdmin,.middle-cardSet{
+    height:500px;
+    width:500px;
+    margin-left: 25px;
+    background-color: #283052;
+    margin-bottom: 20px;
+}
+.middle-seachList:hover,.middle-userShow:hover,.middle-chooseUser:hover,.middle-chooseAdmin:hover,.middle-cardSet:hover{
+    margin-top: -5px;
+    box-shadow: 0px 0px 20px #303A62;
+}
+.seachList,.middle-wxList{
+    height:470px;
+    width:500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.seachList::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.seachList::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.seach-Show{
+    width:500px;
+    height:50px;
+
+}
+.seach-img{
+    float: left;
+    width:35px;
+    height:35px;
+    margin-left: 12.5px;
+    margin-top: 12.5px;
+    border-radius:50%;
+    overflow: hidden;
+    margin-left: 35px;
+}
+.seach-imgShow{
+    width:35px;
+    height:35px;
+}
+.seach-nickName{
+    height:35px;
+    width:120px;
+    margin-top: 12.5px;
+    line-height: 35px;
+    font-size: 15px;
+    color:#FFF;
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+}
+.seach-time{
+    height:35px;
+    width:160px;
+    margin-top: 12.5px;
+    line-height: 35px;
+    font-size: 15px;
+    color:#FFF;
+    float: left;
+    text-align: center;
+}
+.seach-more,.seach-del{
+    width:20px;
+    height:20px;
+    margin-top: 20px;
+    background-size: contain;
+    float: left;
+}
+.seach-more{
+    background-image: url(../images/more.png);
+    margin-left: 40px;
+}
+.seach-del{
+    background-image: url(../images/del.png);
+    margin-left: 20px;
+}
+.seach-more:hover{
+    background-image: url(../images/morehot.png);
+}
+.seach-del:hover{
+    background-image: url(../images/delhot.png);
+}
+.wx-head{
+    width:500px;
+    height:170px;
+}
+.wx-img{
+    width:100px;
+    height:100px;
+    margin-top: 35px;
+    margin-left: 35px;
+    float: left;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.wx-imgShow{
+    width:100px;
+    height:100px;
+}
+.wx-right{
+    float: left;
+    width:305px;
+    margin-left: 40px;
+    height:90px;
+    margin-top: 40px;
+}
+.wx-nickName{
+    height: 50px;
+    color:#FFF;
+    font-size: 26px;
+    line-height: 50px;
+}
+.wx-wxTime{
+    height:40px;
+    color:#FFF;
+    font-size: 17px;
+    line-height: 30px;
+}
+.wx-main{
+    width:250px;
+    height:300px;
+    float: left;
+}
+.wx-list{
+    width:80%;
+    height:40px;
+    margin:0 auto;
+}
+.wx-Showlist{
+    width:100%;
+    height:270px;
+    margin:0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.wx-Showlist::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.wx-Showlist::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.wx-title{
+    width:30%;
+    height:40px;
+    line-height: 40px;
+    color:#FFF;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+}
+.wx-text{
+    width:70%;
+    height:40px;
+    line-height: 40px;
+    color:#FFF;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+}
+.wx-keep{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    color:#FFF;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+}
+.wx-man{
+    height:20px;
+    width:20px;
+    background-image: url(../images/man.png);
+    background-size: contain;
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.wx-name{
+    float: left;
+}
+.wx-woman{
+    height:20px;
+    width:20px;
+    background-image: url(../images/woman.png);
+    background-size: contain;
+    float: left;
+    margin-top:15px;
+    margin-left: 30px;
+}
+.cadmin-name{
+    height:70px;
+    margin:0 auto;
+    width:90%;
+    color:#FFF;
+    font-size: 25px;
+    line-height: 70px;
+}
+.cadmin-list{
+    height:70px;
+    width:90%;
+    margin:0 auto;
+}
+.cadmin-tips{
+    width:30%;
+    height:40px;
+    color:#FFF;
+    font-size: 17px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+}
+.cadmin-input{
+    width:50%;
+    height:30px;
+    margin-top: 5px;
+    margin-left: 20px;
+    color:#FFF;
+    font-size: 17px;
+    line-height: 40px;
+    float: left;
+    background-color: #283052;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #407AFC;
+}
+.cadmin-type{
+    width:40px;
+    height:40px;
+    background-size: contain;
+    background-image: url(../images/open.png);
+    float: left;
+    margin-left: 15px;
+    margin-top:5px;
+}
+.cadmin-button,.card-button{
+    width:200px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin:0 auto;
+    color:#FFF;
+    background-color: #407AFC;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cadmin-button{
+    margin-top:90px;
+}
+.card-button{
+    margin-top:20px;
+}
+.card-listTitle{
+    height:30px;
+    width:480px;
+    margin:0 auto;
+    border-radius: 4px;
+}
+.card-list{
+    height:40px;
+    width:480px;
+    margin:0 auto;
+    background-image: linear-gradient(to right, #074FF2 , #407AFC);
+    border-radius: 4px;
+    margin-left: -30px;
+    cursor:move;
+    margin-bottom: 15px;
+}
+
+.card-title,.card-day,.card-price{
+    height:30px;
+    color:#FFF;
+    width:100px;
+    line-height:30px;
+    border:none;
+    outline:none;
+    font-size: 17px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: transparent;
+}
+.card-titleTips,.card-dayTips,.card-priceTips{
+    height:30px;
+    color:#FFF;
+    width:100px;
+    line-height:30px;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#card-ListBox{
+    width:480px;
+    height:auto;
+    position: relative;
+}
+.card-add{
+    width:110px;
+    height:30px;
+    border-radius: 25px;
+    background-color: #303A62;
+    margin:0 auto;
+    background-image: url(../images/add2.png);
+    background-size: 15px 15px;
+    background-position: 13px 7px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    color:#407AFC;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.card-scroll{
+    height:350px;
+    width:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.card-scroll::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+.card-scroll::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgb(0,0,0,0.2);
+}
+.card-seeTips{
+    height:30px;
+    color:#FFF;
+    width:90px;
+    line-height:30px;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    float: left;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-image: url(../images/tips.png);
+    background-size: 16px 16px;
+    background-position: 68px 7px;
+    background-repeat: no-repeat;
+}
+
+.card-see{
+    height:30px;
+    width:30px;
+    float:left;
+    background-size: contain;
+    margin-left: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.card-delTips{
+    height:30px;
+    color:#FFF;
+    width:50px;
+    line-height:30px;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    margin-left:20px;
+}
+.card-del{
+    height:30px;
+    color:#8FB1FE;
+    width:30px;
+    line-height:30px;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    font-size: 25px;
+    float: left;
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 71px;
+    background-color: transparent;
+}
+.card-del:hover{
+    color:#FFF;
+}
+@keyframes shake {
+
+    0% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+    100%{-webkit-transform: translateX(0);}
+}

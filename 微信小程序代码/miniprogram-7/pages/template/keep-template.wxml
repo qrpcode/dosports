@@ -1,0 +1,9 @@
+<template name="keepTemplate">
+  <view class="list-box">
+    <view class="list-left">
+      <view class="list-title">{{keepDay}}</view>
+      <view class="list-text">{{keepTime}}</view>
+    </view>
+    <view class="list-right">打卡成功</view>
+  </view>
+</template>

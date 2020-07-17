@@ -1,0 +1,42 @@
+<!--pages/dosports/dosports.wxml-->
+<import src="../template/keep-template.wxml" />
+<import src="../template/pay-template.wxml" />
+
+<view class="card" style="{{cardHeight}}">
+  <view class="card-head" hidden="{{getLoginShow}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+  </view>
+  <view class="card-head" bindtap="cardShow">
+    <open-data type="userAvatarUrl" class="card-img"></open-data>
+    <view class="card-name">
+      <open-data type="userNickName" class="card-nickName"></open-data>
+      <view class="card-time">{{lastTime}}到期</view>
+    </view>
+    <view class="card-qrcode"></view>
+  </view>
+  <view class="card-vipCodeBox">
+    <image class="card-vipCode" src="{{wxidCode}}"></image>
+    <view class="card-cipTips">进入健身区前出示此卡</view>
+  </view>
+</view>
+<view class="history" style="height:{{historyHeight}}rpx;">
+  <view class="history-title">
+    <view class="history-bubble" style="{{bubblePlace}}"></view>
+    <view class="history-titleText" bindtap="goKeepData">健身记录</view>
+    <view class="history-titleText" bindtap="goPayData">消费记录</view>
+  </view>
+  <scroll-view class="history-list" scroll-y="true" style="height:{{listHeight}}rpx;">
+    <view wx:for="{{keepData}}" wx:for-item="keepData" wx:key="key" hidden="{{keepDataShow}}">
+      <template is="keepTemplate" data="{{...keepData}}"></template>
+    </view>
+    <view wx:for="{{payData}}" wx:for-item="payData" wx:key="key" hidden="{{payDataShow}}">
+      <template is="payTemplate" data="{{...payData}}"></template>
+    </view>
+    <view bindtap="keepGetMore" class="list-getMore" hidden="{{keepLastOne}}" style="height:{{keepHeight}}rpx">
+      <image src="{{url}}getmore.png"></image>加载更多
+    </view>
+    <view bindtap="payGetMore" class="list-getMore" hidden="{{payLastOne}}" style="height:{{payHeight}}rpx">
+      <image src="{{url}}getmore.png"></image>加载更多
+    </view>
+  </scroll-view>
+</view>
