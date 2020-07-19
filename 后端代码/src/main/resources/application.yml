@@ -5,9 +5,9 @@ server:
 #    context-path: /one
 spring:
   datasource:
-    url: jdbc:mysql://47.95.7.166:3306/do_sport?useSSL=true&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql:///do_sport?useSSL=true&useUnicode=true&characterEncoding=utf8
     username: root
-    password: Xrafece
+    password: root
 #mybatis config
 mybatis:
   mapper-locations:
