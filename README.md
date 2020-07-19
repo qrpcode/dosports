@@ -58,5 +58,9 @@
 
 开发使用的是IDEA，代码肯定能运行，如果发现报错可以百度下解决办法~~
 
+### 导入项目
 
+#### 后端
+
+后端代码采用`SpringBoot`构建，导入需要修改`src\main\resources\application.yml`文件 修改`MySQL`数据库配置，若需使用小程序，还需要修改`src\main\java\com\xrafece\do_sport\util\Constant.java`中相关微信小程序 ID 和秘钥
 
