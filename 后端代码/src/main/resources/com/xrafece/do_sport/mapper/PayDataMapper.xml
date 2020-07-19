@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xrafece.do_sport.mapper.PayDataMapper">
+
+	<select id="allPayDataList" resultType="PayData">
+        select pay_time, pay_money, card_name, wx_avatar, wx_gender, wx_nickName
+        from (select pay_time, pay_money, wx_id, card_name
+              from do_sport.expenses_record) as e
+                 join
+             do_sport.member as m on e.wx_id = m.wx_id
+        order by pay_time desc;
+    </select>
+
+	<select id="payDataList" parameterType="int" resultType="PayData">
+        select pay_time, pay_money, card_name, wx_avatar, wx_gender, wx_nickName
+        from (select pay_time, pay_money, wx_id, card_name
+              from do_sport.expenses_record) as e
+                 join
+             do_sport.member as m on e.wx_id = m.wx_id
+        order by pay_time desc
+        limit
+            #{startIndex},
+            #{pageSize};
+    </select>
+
+	<select id="lastPayData" parameterType="int" resultType="PayData">
+        select pay_time, pay_money, card_name, wx_avatar, wx_gender, wx_nickName
+        from (select pay_time, pay_money, wx_id, card_name
+              from do_sport.expenses_record) as e
+                 join
+             do_sport.member as m on e.wx_id = m.wx_id
+        order by pay_time
+        limit 1;
+    </select>
+
+	<select id="getPayDataById" parameterType="int" resultType="PayData">
+        select pay_time, pay_money, card_name
+        from (select pay_time, pay_money, card_name, wx_id
+              from do_sport.expenses_record) as e
+                 join
+             do_sport.member as m on e.wx_id = m.wx_id
+        where m.id = #{id}
+        order by pay_time desc;
+    </select>
+
+	<select id="getPayDataByWxId" parameterType="object" resultType="PayData">
+        select pay_time, pay_money, card_name
+        from do_sport.expenses_record
+        where wx_id = #{wxId}
+        order by pay_time desc
+        limit
+            #{startIndex},
+            #{pageSize};
+    </select>
+
+</mapper>
